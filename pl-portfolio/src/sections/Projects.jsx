@@ -12,8 +12,11 @@ export default function Projects() {
                             src={img.src}
                             alt={img.alt}
                         />
+                        <div className="txt">
                         <h3>{img.alt}</h3>
                         <p>{img.year}</p>
+                        </div>
+                        
                     </div>
                 ))}
         </section>

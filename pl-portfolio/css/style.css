@@ -169,7 +169,6 @@ h2 {
 }
 .wrapper .left {
   flex: 1;
-  border: 1px solid rebeccapurple;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -181,20 +180,25 @@ h2 {
   flex-direction: column;
 }
 .wrapper .right .projects {
-  background-color: antiquewhite;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4.5rem 3rem;
+  gap: 3rem 0.5rem;
 }
 .wrapper .right .projects > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 1.5rem;
 }
 .wrapper .right .projects > div img {
+  height: 258px;
+  overflow: hidden;
+  object-fit: cover;
   margin: 0 auto;
 }
 .wrapper .right .projects > div h3 {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #2a2a2b;
 }
 .wrapper .right .projects > div p {
