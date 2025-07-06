@@ -1,0 +1,28 @@
+// color variables
+$color-black: black;
+$color-deep: #444;
+$color-deep: #555 !default; //權重最低，可拿來測試用
+$color-grey: #999;
+$color-light: #f1f1f1;
+$color-background1: #f2edf0;
+$color-background2: #e6ece5;
+$color-background3: #ecf0f4;
+$color-lesser1: #f3e4e4;
+$color-lesser2: #efdbdb;
+$color-lesser3: #cdaaab;
+$color-lesser4: #8f6b6d;
+
+// alpha
+$alpha: transparent;
+// 白
+$alpha-w20: rgba(255,255,255,.2);
+$alpha-w30: rgba(255,255,255,.3);
+$alpha-w40: rgba(255, 255, 255,.4);
+$alpha-w50: rgba(255, 255, 255,.5);
+// 黑
+$alpha-b15: rgba(0, 0, 0, 0.15);
+$alpha-b30: rgba(0, 0, 0, 0.30);
+$alpha-b60: rgba(0, 0, 0, 0.60);
+
+// 彩色：色票選擇器 按一下換rgb 補第四格數字為透明度
+$alpha-p60: rgba(205, 170, 171, 0.4)

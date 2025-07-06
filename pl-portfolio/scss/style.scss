@@ -1,0 +1,81 @@
+@use "./variable/" as *;
+// @use "./function/" as *;
+@use "./reset";
+// @use "./icon";
+// @use "./keyframe";
+
+// 串google font：只允許編碼在它上面
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&family=Special+Gothic+Expanded+One&family=Roboto+Slab:wght@100..900&display=swap');
+
+a {
+    cursor: pointer;
+    color: #497089;
+    opacity: 1;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+h2 {
+    color: #6c6051;
+    font-size: 5rem;
+}
+
+.wrapper {
+    display: flex;
+    width: 100vw;
+    padding: 10% 4%;
+    gap: 1.5rem;
+
+    /* 導覽列 */
+    .left {
+        flex: 1;
+        border: 1px solid rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    /* 展示區*/
+    .right {
+        flex: 5;
+        gap: 3rem;
+        display: flex;
+        flex-direction: column;
+
+        .about {}
+
+        .contact {}
+
+        .projects {
+            background-color: antiquewhite;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); // 三欄
+            gap: 4.5rem 3rem;
+
+            >div {
+                gap: 1.5rem;
+
+                img {
+                    margin: 0 auto;
+                }
+
+                h3 {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: #2a2a2b;
+                }
+
+                p {
+                    font-size: 10px;
+                    color: #929292;
+                }
+            }
+
+        }
+
+
+    }
+
+}
