@@ -184,24 +184,70 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem 0.5rem;
 }
-.wrapper .right .projects > div {
+.wrapper .right .projects .project-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-.wrapper .right .projects > div img {
+.wrapper .right .projects .project-item:hover {
+  transform: scale(1.03);
+}
+.wrapper .right .projects .project-item img {
   height: 258px;
   overflow: hidden;
   object-fit: cover;
+  background-color: antiquewhite;
   margin: 0 auto;
 }
-.wrapper .right .projects > div h3 {
+.wrapper .right .projects .project-item h3 {
   font-size: 1rem;
   font-weight: 400;
   color: #2a2a2b;
 }
-.wrapper .right .projects > div p {
+.wrapper .right .projects .project-item p {
   font-size: 10px;
   color: #929292;
+}
+.wrapper .right .projects .lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.wrapper .right .projects .lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+.wrapper .right .projects .lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+}
+.wrapper .right .projects .lightbox-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 38px;
+}
+.wrapper .right .projects .caption {
+  color: white;
+  text-align: center;
+  margin-top: 12px;
 }/*# sourceMappingURL=style.css.map */
