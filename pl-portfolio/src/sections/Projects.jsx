@@ -38,7 +38,7 @@ export default function Projects() {
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
                         <span className="lightbox-close" onClick={closeLightbox}>×</span>
                         <img src={selectedImage.src} alt={selectedImage.alt} />
-                        <p className="caption">{selectedImage.alt}</p>
+                        <h3 className="caption">{selectedImage.alt}</h3>
                     </div>
                 </div>
             )}

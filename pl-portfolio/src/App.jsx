@@ -8,25 +8,31 @@ import '../scss/style.scss';
 
 function App() {
   return (
-    <div className="wrapper">
-      {/* 導覽列 */}
-      <nav className="left">
-        <ul>
-          {/* <li><Link to="about" smooth duration={500}>About</Link></li> */}
-          <li><Link to="projects" smooth duration={500}>Projects</Link></li>
-          {/* <li><Link to="contact" smooth duration={500}>Contact</Link></li> */}
-        </ul>
-      </nav>
+    <>
+      <div className="wrapper">
+        {/* 導覽列 */}
+        <nav className="left">
+          <ul>
+            {/* <li><Link to="about" smooth duration={500}>About</Link></li> */}
+            <li><Link to="projects" smooth duration={500}>Projects</Link></li>
+            <li><a href="https://www.instagram.com/artbypl_/">Creative Space</a></li>
+            {/* <li><Link to="contact" smooth duration={500}>Contact</Link></li> */}
+          </ul>
+        </nav>
 
-      {/* 各區塊 */}
-      <div className="right">
-      {/* <Element name="about"><About /></Element> */}
-      <Element name="projects"><Projects /></Element>
-      {/* <Element name="contact"><Contact /></Element> */}
+        {/* 各區塊 */}
+        <div className="right">
+          {/* <Element name="about"><About /></Element> */}
+          <Element name="projects"><Projects /></Element>
+          {/* <Element name="contact"><Contact /></Element> */}
+
+        </div>
 
       </div>
-
-    </div>
+      <footer>
+        <p>&copy; 2025 PL. All rights reserved.</p>
+      </footer>
+    </>
   );
 }
 
