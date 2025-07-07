@@ -4,6 +4,12 @@ import { images } from '../data/images';
 
 
 export default function Projects() {
+    const base = import.meta.env.BASE_URL;
+
+    const addBase = (path) => {
+        if (!path) return "";
+        return base + path.replace(/^\/+/, "");
+    };
     const [selectedImage, setSelectedImage] = useState(null);
 
     const openLightbox = (img) => {
@@ -23,7 +29,7 @@ export default function Projects() {
                     className="project-item"
                 >
                     <img
-                        src={img.src}
+                        src={addBase(img.src)}
                         alt={img.alt}
                     />
                     <div className="txt">
@@ -37,7 +43,7 @@ export default function Projects() {
                 <div className="lightbox" onClick={closeLightbox}>
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
                         <span className="lightbox-close" onClick={closeLightbox}>×</span>
-                        <img src={selectedImage.src} alt={selectedImage.alt} />
+                        <img src={addBase(selectedImage.src)} alt={selectedImage.alt} />
                         <h3 className="caption">{selectedImage.alt}</h3>
                     </div>
                 </div>
