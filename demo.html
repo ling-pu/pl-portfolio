@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap");
+
+        :root {
+            --height: 80vh;
+            --half-height: calc(var(--height) / 2);
+            --transition: all 1s;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Bitter", serif;
+            margin: 20px 0;
+            padding: 0 15px;
+            background: #cae9ff;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .notification {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            font-size: 0.85em;
+            background: #e9c46a;
+        }
+
+        .grid,
+        .sub-grid,
+        .grid .card {
+            transition: var(--transition);
+        }
+
+        .grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .card {
+            cursor: pointer;
+
+            figure,
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            figure {
+                position: relative;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            img {
+                object-fit: cover;
+                background: #333;
+            }
+
+            figcaption {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: grid;
+                place-items: center;
+                font-size: 1.5em;
+                line-height: 1.3;
+                text-align: center;
+                padding: 10px;
+                color: white;
+                background: rgba(0, 0, 0, 0.5);
+
+                span {
+                    display: block;
+                    font-size: 0.75em;
+                }
+            }
+        }
+
+        @media (max-width: 899px) {
+            .card {
+                height: var(--half-height);
+            }
+        }
+
+        @media (min-width: 900px) {
+
+            .grid,
+            .sub-grid {
+                display: grid;
+            }
+
+            .grid {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
+            .sub-grid {
+                grid-template-rows: var(--half-height) var(--half-height);
+            }
+
+            .sub-grid-1 {
+                grid-template-columns: 1fr 1fr auto;
+            }
+
+            .sub-grid-1 .card:last-child {
+                grid-column: 1/-1;
+            }
+
+            /*.sub-grid-2 {
+    grid-template-columns: 1fr;
+  }*/
+
+            .grid>.card {
+                height: var(--height);
+            }
+        }
+
+        @media (hover: hover) and (min-width: 900px) {
+            .notification {
+                display: block;
+            }
+
+            .grid:has(.sub-grid-1 .card:first-of-type:hover) .sub-grid-1 {
+                grid-template-columns: 1fr 0fr auto;
+            }
+
+            .grid:has(.sub-grid-1 .card:nth-of-type(2):hover) .sub-grid-1 {
+                grid-template-columns: 0fr 1fr auto;
+            }
+
+            .grid:has(.sub-grid-1 .card:last-of-type:hover) .sub-grid-1 {
+                grid-template-rows: 0 var(--height);
+            }
+
+            .grid:has(> .card:hover) {
+                grid-template-columns: 0fr 1fr 0fr;
+            }
+
+            .grid:has(.sub-grid-2 .card:first-of-type:hover) .sub-grid-2 {
+                grid-template-rows: var(--height) 0;
+            }
+
+            .grid:has(.sub-grid-2 .card:last-of-type:hover) .sub-grid-2 {
+                grid-template-rows: 0 var(--height);
+            }
+
+            .card {
+                filter: grayscale(1);
+
+                figcaption {
+                    opacity: 0;
+                }
+
+                &:hover {
+                    filter: grayscale(0);
+
+                    figcaption {
+                        opacity: 1;
+                        transition: opacity 0.5s 0.5s;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="sub-grid sub-grid-1">
+            <article class="card">
+                <figure>
+                    <img width="1600" height="900" src="https://assets.codepen.io/162656/beach2.jpg" alt="">
+                    <figcaption>
+                        <div>
+                            Santorini, Greece
+                            <span>by <a href="https://unsplash.com/photos/white-sun-lounger-lot-KrGbdPfIYD4"
+                                    target="_blank">Khamkéo</a>
+                            </span>
+                        </div>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="card">
+                <figure>
+                    <img width="1600" height="1067" src="https://assets.codepen.io/162656/beach6.jpg" alt="">
+                    <figcaption>
+                        <div>
+                            Kvalvika Beach, Moskenes, Norway
+                            <span>by <a href="https://unsplash.com/photos/beach-near-mountain-range-wnRvXXzZK7w"
+                                    target="_blank"></a>Martine Jacobsen
+                            </span>
+                        </div>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="card">
+                <figure>
+                    <img width="1600" height="1036" src="https://assets.codepen.io/162656/beach3.jpg" alt="">
+                    <figcaption>
+                        <div>
+                            San Lorenzo, Italy
+                            <span>by <a href="https://unsplash.com/photos/photo-of-seashore-d7M5Xramf8g"
+                                    target="_blank">Camille Minouflet</a>
+                            </span>
+                        </div>
+                    </figcaption>
+                </figure>
+            </article>
+        </div>
+        <article class="card">
+            <figure>
+                <img width="1600" height="900" src="https://assets.codepen.io/162656/beach4.jpg" alt="">
+                <figcaption>
+                    <div>
+                        McWay Falls, California, USA
+                        <span>by <a
+                                href="https://unsplash.com/photos/aerial-photography-of-boulders-on-body-of-water-07mSKrzKiRw"
+                                target="_blank">Chor Tsang</a>
+                        </span>
+                    </div>
+                </figcaption>
+            </figure>
+        </article>
+        <div class="sub-grid sub-grid-2">
+            <article class="card">
+                <figure>
+                    <img width="1600" height="1064" src="https://assets.codepen.io/162656/beach5.jpg" alt="">
+                    <figcaption>
+                        <div>
+                            Inisheer, County Galway, Ireland
+                            <span>by <a
+                                    href="https://unsplash.com/photos/a-beach-with-a-boat-on-it-and-people-walking-on-it-Il4WLGeMsUk"
+                                    target="_blank">Ulrike R. Donohue</a>
+                            </span>
+                        </div>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="card">
+                <figure>
+                    <img width="1600" height="898" src="https://assets.codepen.io/162656/beach1.jpg" alt="">
+                    <figcaption>
+                        <div>
+                            Beaches, Jacksonville Beach, Florida, United States
+                            <span>by <a href="https://unsplash.com/photos/man-surfing-on-waves-L5aI2jU0i50"
+                                    target="_blank">Lance Asper</a>
+                            </span>
+                        </div>
+                    </figcaption>
+                </figure>
+            </article>
+        </div>
+    </div>
+
+</body>
+
+</html>
