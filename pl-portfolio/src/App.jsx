@@ -5,17 +5,20 @@ import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 // scss
 import '../scss/style.scss';
+// img
+import img1 from '../favicon.svg';
 
 function App() {
   return (
     <>
-      <div className='head'>
+      {/* <div className='head'>
         <h2>Hello, I'm designer <h2 className="name">PL</h2>.</h2>
-      </div>
+      </div> */}
       <div className="wrapper">
         {/* 導覽列 */}
         <nav className="nav">
           <ul>
+            <li><img className='profile-img' src={img1} alt="favicon" /></li>
             <li><Link to="about" smooth duration={500}>About</Link></li>
             <li><Link to="projects" smooth duration={500}>Selected Projects</Link></li>
             <li><Link to="contact" smooth duration={500}>Contact</Link></li>

@@ -19,9 +19,10 @@ export default function Projects() {
     const closeLightbox = () => {
         setSelectedImage(null);
     };
-    return (
+    return (<>
+        <h2>Selected Projects</h2>
         <section className="projects">
-            <h2>Selected Projects</h2>
+
 
             {/* <h2 className="text-3xl font-bold mb-4">Projects</h2> */}
             {images.map((img, idx) => (
@@ -50,5 +51,6 @@ export default function Projects() {
                 </div>
             )}
         </section>
+    </>
     );
 }

@@ -18,15 +18,21 @@ a {
 }
 
 h2 {
-    color: #0a4058;
-    font-size: 5rem;
+    @media (max-width: 800px) {
+        font-size: 2rem;
+    }
+
+    padding: 6rem 0 0;
+    color: #2a2a2b;
+    font-size: 3rem;
     // .borel-regular 
-    font-family: "Borel", cursive;
+    font-family: "Borel",
+    cursive;
     font-weight: 400;
     font-style: normal;
 
     .name {
-        color: #43a3cd;
+        color: #593a28;
     }
 
 }
@@ -38,28 +44,54 @@ h3 {
 }
 
 p {
+    line-height: 1.5rem;
     font-size: 12px;
     color: #929292;
 }
 
-.head {
-    display: block;
-    width: 100vw;
-    padding: 10% 4% 0%;
-    margin: 0%;
-}
+// .head {
+//     display: block;
+//     width: 100vw;
+//     padding: 10% 4% 0%;
+//     margin: 0%;
+// }
 
 .wrapper {
+    
     display: flex;
+    flex-direction: row-reverse;
     width: 100vw;
     padding: 4% 4%;
-    gap: 0.5rem;
+    gap: 2rem;
+
+    #menu {
+        height: 100%;
+        position: fixed;
+        background-color: #FED057;
+        width: 300px;
+        transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+        transform: translateX(-100%);
+        left: 60px;
+    }
+    
 
     /* 導覽列 */
     .nav {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
+        @media (max-width: 800px) {
+            display: none;
+        }
+        
+        position: sticky;
+        top: 10%;
+        width: 10%;
+        align-self: flex-start;
+        // flex: 1;
+        // display: flex;
+        // flex-direction: column;
+
+        li {
+            padding: 0 0 2rem;
+        }
 
         a {
             line-height: 2rem;
@@ -68,21 +100,38 @@ p {
             font-weight: 400;
             font-style: normal;
         }
+
+        img {
+            width: 20%;
+        }
     }
 
     /* 展示區*/
     .show {
+        background-color: $color-lesser1;
         flex: 5;
+        padding: 0 0 80%;
         gap: 3rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
 
+        h2 {
+            background-color: $color-lesser3;
+            position: sticky;
+            top: 0rem;
+            // z-index: -1;
+        }
+
         .projects {
+
+            @media (max-width: 800px) {
+                grid-template-columns: repeat(1, 1fr); // 一欄
+            }
 
             display: grid;
             grid-template-columns: repeat(3, 1fr); // 三欄
-            gap: 3rem 0.5rem;
+            gap: 3rem 1.5rem;
 
             .project-item {
                 display: flex;
