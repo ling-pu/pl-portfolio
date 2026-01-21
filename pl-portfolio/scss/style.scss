@@ -84,6 +84,7 @@ p {
             align-self: flex-end;
         }
     }
+
     .nav {
 
         position: sticky;
@@ -108,6 +109,91 @@ p {
 
         img {
             width: 20%;
+        }
+    }
+
+    // 漢堡選單
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .hamburger-icon {
+        width: 32px;
+        color: #2a2a2b;
+        transition: 0.6s ease;
+    }
+
+    .hamburger span {
+        width: 24px;
+        height: 3px;
+        background: #2a2a2b;
+        transition: 0.6s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .nav {
+        display: flex;
+        gap: 2rem;
+    }
+
+    @media (max-width: 800px) {
+        .hamburger {
+            display: flex;
+            position: fixed;
+            z-index: 2;
+
+            .hamburger-icon.open {
+                width: 40px;
+                color: $color-yellow;
+                /* 打開時顏色 */
+                transform: translateY(0px) rotate(-225deg);
+            }
+        }
+
+        .nav {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: -100%;
+            height: 100%;
+            width: 100%;
+            //   手機選單背景色
+            background: rgba($color-lesser4, .95);
+            padding: 3rem 1.5rem;
+            transition: 0.3s;
+        }
+
+        .nav.open {
+            right: 0%;
+            justify-content: end;
+            ul {
+                padding: 20% 4% 0;
+                a {
+                    color: $color-yellow;
+                }
+    
+            }
+            
+            font-size: 1rem;
+
+            
+
         }
     }
 
