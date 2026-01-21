@@ -1,9 +1,9 @@
 // src/sections/About.jsx
 import { useState } from 'react';
-import { images1 } from '../data/images1';
+import { images2 } from '../data/images2';
 
 
-export default function Projects() {
+export default function Personalworks() {
     const base = import.meta.env.BASE_URL;
 
     const addBase = (path) => {
@@ -20,12 +20,12 @@ export default function Projects() {
         setSelectedImage(null);
     };
     return (<>
-        <h2>Web and UI Design</h2>
+        <h2>Personal Works</h2>
+
         <section className="projects">
 
-
             {/* <h2 className="text-3xl font-bold mb-4">Projects</h2> */}
-            {images1.map((img, idx) => (
+            {images2.map((img, idx) => (
                 <div key={idx}
                     onClick={() => openLightbox(img)}
                     className="project-item"

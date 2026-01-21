@@ -7,6 +7,18 @@
 // 串google font：只允許編碼在它上面
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&family=Special+Gothic+Expanded+One&family=Roboto+Slab:wght@100..900&display=swap');
 
+// 字體
+
+// <weight>: Use a value from 400 to 800
+// <uniquifier>: Use a unique and descriptive class name
+// .sen-<uniquifier> {
+//     font-family: "Sen", sans-serif;
+//     font-optical-sizing: auto;
+//     font-weight: <weight>;
+//     font-style: normal;
+//   }
+
+  
 a {
     cursor: pointer;
     color: #2a2a2b;
@@ -19,7 +31,7 @@ a {
 
 h2 {
 
-    padding: 6rem 0 0;
+    padding: 6rem 0 1.5rem;
     color: #2a2a2b;
     font-size: 3rem;
     // .borel-regular 
@@ -27,6 +39,7 @@ h2 {
         cursive;
     font-weight: 400;
     font-style: normal;
+    // letter-spacing: 0.02rem;
 
     .name {
         color: #593a28;
@@ -44,6 +57,7 @@ h3 {
     font-size: 1rem;
     font-weight: 400;
     color: #2a2a2b;
+
 }
 
 p {
@@ -113,6 +127,13 @@ p {
     }
 
     // 漢堡選單
+    .contact-icon {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
     .hamburger {
         display: none;
         flex-direction: column;
@@ -152,13 +173,55 @@ p {
         gap: 2rem;
     }
 
+    .button-style{
+        display: flex;
+        justify-content: center;
+        margin: 4% 16%;
+        // 按鈕底色
+        padding: 1.5rem 1rem;
+        background-color: cadetblue;
+        // 字體顏色
+        color: rgba($color-lesser1, 1);
+        font-family: "Sen", sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        letter-spacing: 0.15rem;
+
+    }
+
     @media (max-width: 800px) {
+
+
+
+        .contact-icon {
+            border-radius: 0 1rem 1rem 0;
+            margin: 0;
+            
+            position: fixed;
+            z-index: 1;
+            bottom: 1rem;
+            left: 0.5rem;
+            
+            transition: transform 0.6s ease, opacity 0.6s ease;
+            /* 預設隱藏 */
+            opacity: 0;
+            transform: translateY(2rem);
+
+            /* 滑動後出現 */
+            .contact-icon.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .hamburger {
             display: flex;
             position: fixed;
             z-index: 2;
 
             .hamburger-icon.open {
+                top: 1rem;
+                right: 1rem;
                 width: 40px;
                 color: $color-yellow;
                 /* 打開時顏色 */
@@ -182,17 +245,19 @@ p {
         .nav.open {
             right: 0%;
             justify-content: end;
+
             ul {
                 padding: 20% 4% 0;
+
                 a {
                     color: $color-yellow;
                 }
-    
+
             }
-            
+
             font-size: 1rem;
 
-            
+
 
         }
     }
@@ -214,11 +279,7 @@ p {
             // z-index: -1;
         }
 
-        @media (max-width: 800px) {
-            .projects {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
+
 
         .projects {
 
@@ -299,6 +360,12 @@ p {
 
         }
 
+        @media (max-width: 800px) {
+
+            .projects {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
 
     }
 
