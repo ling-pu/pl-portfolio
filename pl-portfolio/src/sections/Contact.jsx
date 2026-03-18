@@ -16,7 +16,7 @@ export default function Contact() {
         </p>
 
         {/* Resume */}
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <a
             href="/resume.pdf"
             target="_blank"
@@ -25,7 +25,7 @@ export default function Contact() {
           >
             Download Resume
           </a>
-        </div>
+        </div> */}
 
         {/* Contact Form */}
         {/* <form className="space-y-4 text-left">

@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&family=Special+Gothic+Expanded+One&family=Roboto+Slab:wght@100..900&display=swap");
 /*reset CSS */
 ::-webkit-scrollbar {
-  background-color: #efdbdb;
+  background-color: #f0e4e4;
   width: 10px;
   height: 10px;
 }
@@ -145,6 +145,12 @@ a {
   text-decoration: none;
 }
 
+:root {
+  --font-family-title: "Roboto Mono", monospace;
+  --font-family-text-base: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
 a {
   cursor: pointer;
   color: #2a2a2b;
@@ -155,8 +161,24 @@ a:hover {
 }
 
 h2 {
+  padding: 0.5rem 0 1.5rem;
   color: #2a2a2b;
-  font-size: 5rem;
+  font-size: 1.5rem;
+  font-family: var(--font-family-title);
+  font-weight: 400;
+  font-style: normal;
+}
+h2 .name {
+  color: #593a28;
+}
+
+@media (max-width: 800px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+h3, p {
+  font-family: var(--font-family-text-base);
 }
 
 h3 {
@@ -166,6 +188,7 @@ h3 {
 }
 
 p {
+  line-height: 1.5rem;
   font-size: 12px;
   color: #929292;
 }
@@ -173,32 +196,188 @@ p {
 .wrapper {
   display: flex;
   width: 100vw;
-  padding: 10% 4%;
-  gap: 0.5rem;
+  padding: 1% 10% 1% 1%;
+  gap: 2rem;
+}
+.wrapper #menu {
+  height: 100%;
+  position: fixed;
+  background-color: #FED057;
+  width: 300px;
+  transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateX(-100%);
+  left: 60px;
+}
+.wrapper {
   /* 導覽列 */
+}
+@media (max-width: 800px) {
+  .wrapper .nav {
+    align-self: flex-end;
+  }
+}
+.wrapper .nav {
+  position: sticky;
+  top: 10%;
+  width: 10%;
+  align-self: flex-start;
+}
+.wrapper .nav li {
+  padding: 0 0 2rem;
+}
+.wrapper .nav a {
+  line-height: 2rem;
+  font-family: "Borel", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.wrapper .nav img {
+  width: 20%;
+}
+.wrapper .contact-icon {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.wrapper .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.wrapper .hamburger-icon {
+  width: 32px;
+  color: #2a2a2b;
+  transition: 0.6s ease;
+}
+.wrapper .hamburger span {
+  width: 24px;
+  height: 3px;
+  background: #2a2a2b;
+  transition: 0.6s;
+}
+.wrapper .hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.wrapper .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.wrapper .hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+.wrapper .nav {
+  display: flex;
+  gap: 2rem;
+}
+.wrapper .button-style {
+  display: flex;
+  justify-content: center;
+  margin: 4% 0;
+  max-width: 360px;
+  padding: 1.5rem 1rem;
+  background-color: cadetblue;
+  color: #f8f3f3;
+  font-family: "Sen", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.15rem;
+}
+@media (max-width: 800px) {
+  .wrapper .contact-icon {
+    border-radius: 0 1rem 1rem 0;
+    margin: 0;
+    position: fixed;
+    z-index: 1;
+    bottom: 1rem;
+    left: 0.5rem;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    /* 預設隱藏 */
+    opacity: 0;
+    transform: translateY(2rem);
+    /* 滑動後出現 */
+  }
+  .wrapper .contact-icon .contact-icon.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .wrapper .hamburger {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+  }
+  .wrapper .hamburger .hamburger-icon.open {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    color: #f0deb4;
+    /* 打開時顏色 */
+    transform: translateY(0px) rotate(-225deg);
+  }
+  .wrapper .nav {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    background: rgba(68, 56, 57, 0.95);
+    padding: 3rem 1.5rem;
+    transition: 0.3s;
+  }
+  .wrapper .nav.open {
+    right: 0%;
+    justify-content: end;
+  }
+  .wrapper .nav.open ul {
+    padding: 20% 4% 0;
+  }
+  .wrapper .nav.open ul a {
+    color: #f0deb4;
+  }
+  .wrapper .nav.open {
+    font-size: 1rem;
+  }
+}
+.wrapper {
   /* 展示區*/
 }
-.wrapper .left {
-  flex: 1;
+.wrapper .show {
+  background-color: #f8f3f3;
+  flex: 5;
+  padding: 4% 4% 80%;
+  gap: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.wrapper .left a {
-  line-height: 2rem;
-}
-.wrapper .right {
-  flex: 5;
-  gap: 3rem;
+.wrapper .show .header {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.wrapper .right .projects {
+.wrapper .show h2 {
+  background-color: #f8f3f3;
+  position: sticky;
+  top: 0rem;
+}
+.wrapper .show .about {
+  display: flex;
+  gap: 2%;
+}
+.wrapper .show .about img {
+  max-width: 560px;
+  max-height: 160px;
+}
+.wrapper .show .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem 0.5rem;
+  gap: 3rem 1.5rem;
 }
-.wrapper .right .projects .project-item {
+.wrapper .show .projects .project-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -206,17 +385,17 @@ p {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-.wrapper .right .projects .project-item:hover {
+.wrapper .show .projects .project-item:hover {
   transform: scale(1.03);
 }
-.wrapper .right .projects .project-item img {
+.wrapper .show .projects .project-item img {
   height: 20vh;
   overflow: hidden;
   object-fit: cover;
   background-color: antiquewhite;
   margin: 0 auto;
 }
-.wrapper .right .projects .lightbox {
+.wrapper .show .projects .lightbox {
   position: fixed;
   top: 0;
   left: 0;
@@ -228,18 +407,18 @@ p {
   align-items: center;
   z-index: 1000;
 }
-.wrapper .right .projects .lightbox-content {
+.wrapper .show .projects .lightbox-content {
   position: relative;
   display: flex;
   gap: 1.5rem;
   max-width: 90%;
   max-height: 90%;
 }
-.wrapper .right .projects .lightbox-content img {
+.wrapper .show .projects .lightbox-content img {
   max-width: 70vw;
   max-height: 60vh;
 }
-.wrapper .right .projects .lightbox-close {
+.wrapper .show .projects .lightbox-close {
   position: absolute;
   top: -1px;
   right: -56px;
@@ -253,10 +432,15 @@ p {
   text-align: center;
   line-height: 38px;
 }
-.wrapper .right .projects .caption {
+.wrapper .show .projects .caption {
   width: 10vw;
   text-align: center;
   margin-top: 12px;
+}
+@media (max-width: 800px) {
+  .wrapper .show .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 footer {
