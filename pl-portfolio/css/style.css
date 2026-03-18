@@ -161,7 +161,7 @@ a:hover {
 }
 
 h2 {
-  padding: 0.5rem 0 1.5rem;
+  padding: 0.5rem 0 1rem;
   color: #2a2a2b;
   font-size: 1.5rem;
   font-family: var(--font-family-title);
@@ -198,6 +198,11 @@ p {
   width: 100vw;
   padding: 1% 10% 1% 1%;
   gap: 2rem;
+}
+@media (max-width: 800px) {
+  .wrapper {
+    padding: 1%;
+  }
 }
 .wrapper #menu {
   height: 100%;
@@ -353,6 +358,12 @@ p {
   flex-direction: column;
   justify-content: flex-start;
 }
+.wrapper .show section {
+  padding: 1.5rem 0;
+}
+.wrapper .show section div {
+  padding: 0.5rem 0;
+}
 .wrapper .show .header {
   display: flex;
   flex-direction: column;
@@ -362,7 +373,7 @@ p {
 .wrapper .show h2 {
   background-color: #f8f3f3;
   position: sticky;
-  top: 0rem;
+  top: 2rem;
 }
 .wrapper .show .about {
   display: flex;
@@ -371,6 +382,9 @@ p {
 .wrapper .show .about img {
   max-width: 560px;
   max-height: 160px;
+}
+.wrapper .show img {
+  z-index: 0;
 }
 .wrapper .show .projects {
   display: grid;
@@ -405,7 +419,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1;
 }
 .wrapper .show .projects .lightbox-content {
   position: relative;
