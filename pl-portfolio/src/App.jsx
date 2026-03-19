@@ -43,8 +43,8 @@ function App() {
             
             {/* <li><Link to="projects" smooth duration={500} onClick={closeMenu}>Selected Projects</Link></li> */}
             <li><Link to="personalworks" smooth duration={500} onClick={closeMenu}>Moments of Presence</Link></li>
-            <li><Link to="contact" smooth duration={500} onClick={closeMenu}>Contact</Link></li>
             <li><Link to="about" smooth duration={500} onClick={closeMenu}>About</Link></li>
+            <li><Link to="contact" smooth duration={500} onClick={closeMenu}>Contact</Link></li>   
             <p>my instagram</p><li><a href="https://www.instagram.com/artbypl_/">artbypl_</a></li>
           </ul>
         </nav>
@@ -61,8 +61,9 @@ function App() {
           
           {/* <Element name="projects"><Projects /></Element> */}
           <Element name="personalworks"><Personalworks /></Element>
-          <Element name="contact"><Contact /></Element>
           <Element name="about"><About /></Element>
+          <Element name="contact"><Contact /></Element>
+          
 
         </div>
 
