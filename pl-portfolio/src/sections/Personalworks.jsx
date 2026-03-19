@@ -20,7 +20,7 @@ export default function Personalworks() {
         setSelectedImage(null);
     };
     return (<>
-        <h2>Personal Works</h2>
+        {/* <h2>Personal Works</h2> */}
 
         <section className="projects">
 

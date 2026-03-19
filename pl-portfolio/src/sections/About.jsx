@@ -6,12 +6,11 @@ export default function About() {
       <div className="box-text">
         <h2>Hello, my name is <span className="name">PL.</span></h2>
         <h3 className="text-gray-700 leading-relaxed">
-          I’m a designer with a passion for front-end development.
-          I love crafting intuitive UI with React and turning ideas into interactive experiences.
+          I am currently developing this website and hope you enjoy exploring it.
         </h3>
       </div>
       <div className="box-pic">
-        <img src="./images/gallery6.png" alt="intro-picture" />
+        {/* <img src="./images/gallery6.png" alt="intro-picture" /> */}
       </div>
     </section>
   );

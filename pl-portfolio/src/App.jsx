@@ -13,6 +13,7 @@ import { useHamburgerMenu } from "./sections/useHamburgerMenu";
 
 function App() {
   const { isOpen, toggleMenu, closeMenu, menuRef } = useHamburgerMenu();
+  
   return (
     <>
 
@@ -39,10 +40,11 @@ function App() {
         <nav className={`nav ${isOpen ? "open" : ""}`}>
           <ul>
             {/* <li><img className='profile-img' src={img1} alt="favicon" /></li> */}
+            
+            {/* <li><Link to="projects" smooth duration={500} onClick={closeMenu}>Selected Projects</Link></li> */}
+            <li><Link to="personalworks" smooth duration={500} onClick={closeMenu}>Moments of Presence</Link></li>
+            <li><Link to="contact" smooth duration={500} onClick={closeMenu}>Contact</Link></li>
             <li><Link to="about" smooth duration={500} onClick={closeMenu}>About</Link></li>
-            <li><Link to="projects" smooth duration={500} onClick={closeMenu}>Selected Projects</Link></li>
-            <li><Link to="personalworks" smooth duration={500} onClick={closeMenu}>Creative Works</Link></li>
-            <li><Link to="contact" smooth duration={500} onClick={closeMenu}>Contact me</Link></li>
             <p>my instagram</p><li><a href="https://www.instagram.com/artbypl_/">artbypl_</a></li>
           </ul>
         </nav>
@@ -53,19 +55,20 @@ function App() {
         <div className="show">
           {/* header */}
           <div className="header">
-            <h2>Pl's Artshop</h2>
+            <h2>Moments of Presence</h2>
 
           </div>
-          <Element name="about"><About /></Element>
-          <Element name="projects"><Projects /></Element>
+          
+          {/* <Element name="projects"><Projects /></Element> */}
           <Element name="personalworks"><Personalworks /></Element>
           <Element name="contact"><Contact /></Element>
+          <Element name="about"><About /></Element>
 
         </div>
 
       </div>
       <footer>
-        <p>&copy; 2025 PL. All rights reserved.</p>
+        <p>&copy; 2026 PL. All rights reserved.</p>
       </footer>
     </>
   );

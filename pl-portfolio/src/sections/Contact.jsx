@@ -3,8 +3,9 @@ export default function Contact() {
   return (
     <section className="contact min-h-screen flex items-center justify-center bg-white">
       <div className="max-w-xl text-center px-4">
-        <h2 className="text-3xl font-bold mb-4">Thank you for your interest in my portfolio!</h2>
-        <h3>I’m available for freelance web projects, commercial and personal illustration, and full-time opportunities. Feel free to reach out if you’d like to connect!</h3>
+        <h2 className="text-3xl font-bold mb-4">Thank you for your interest in my works!</h2>
+        <h3>I’m available for freelance projects, both commercial and personal illustration.</h3>
+        <h3>Feel free to reach out if you’d like to connect!</h3>
         {/* Email */}
         <p className="mb-4 text-gray-700">
           <a

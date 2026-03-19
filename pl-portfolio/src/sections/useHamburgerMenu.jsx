@@ -10,18 +10,18 @@ export function useHamburgerMenu() {
   useEffect(() => {
     function handleClickOutside(e) {
       if (!menuRef.current) return;
-
+  
       if (!menuRef.current.contains(e.target)) {
         setIsOpen(false);
       }
     }
-
+  
     if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("click", handleClickOutside);
     }
-
+  
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [isOpen]);
 
